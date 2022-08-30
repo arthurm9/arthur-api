@@ -1,6 +1,7 @@
 package br.com.etec.arthur.arthurapi.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "curso")
@@ -9,6 +10,19 @@ public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    // equals & hash code
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Curso curso = (Curso) o;
+        return id.equals(curso.id);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
     private String nomecurso;
 
