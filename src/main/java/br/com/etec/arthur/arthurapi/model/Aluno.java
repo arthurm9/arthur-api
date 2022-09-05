@@ -11,7 +11,6 @@ public class Aluno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // equals & hash code
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -26,7 +25,6 @@ public class Aluno {
 
     private String nomealuno;
 
-    // getter's and setter's
     public Long getId() {
         return id;
     }
@@ -40,5 +38,14 @@ public class Aluno {
         this.nomealuno = nomealuno;
     }
 
-    // private Long cursoid;
+    public Curso getCurso() {
+        return curso;
+    }
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    @ManyToOne
+    @JoinColumn(name="cursoid")
+    private Curso curso;
 }

@@ -1,6 +1,8 @@
 package br.com.etec.arthur.arthurapi.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -11,7 +13,6 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // equals & hash code
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -38,5 +39,16 @@ public class Curso {
     }
     public void setNomecurso(String nomecurso) {
         this.nomecurso = nomecurso;
+    }
+
+    @OneToMany(mappedBy = "curso")
+    private List<Aluno> alunos = new ArrayList<>();
+
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
     }
 }

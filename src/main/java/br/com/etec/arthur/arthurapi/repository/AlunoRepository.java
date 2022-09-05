@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 // estende do jpa
-public interface AlunoInterface extends JpaRepository<Aluno, Long> {
+public interface AlunoRepository extends JpaRepository<Aluno, Long> {
 }
