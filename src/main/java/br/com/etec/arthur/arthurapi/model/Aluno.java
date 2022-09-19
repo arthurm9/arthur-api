@@ -46,6 +46,6 @@ public class Aluno {
     }
 
     @ManyToOne
-    @JoinColumn(name="cursoid")
+    @JoinColumn(name="curso")
     private Curso curso;
 }
