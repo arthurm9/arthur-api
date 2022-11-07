@@ -45,6 +45,7 @@ public class Aluno {
         this.curso = curso;
     }
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="curso")
     private Curso curso;

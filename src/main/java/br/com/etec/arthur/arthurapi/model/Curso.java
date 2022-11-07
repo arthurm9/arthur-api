@@ -41,6 +41,7 @@ public class Curso {
         this.nomecurso = nomecurso;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "curso")
     private List<Aluno> alunos = new ArrayList<>();
 

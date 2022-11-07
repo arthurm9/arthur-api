@@ -8,17 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("cursos")
-public class CursoResource {
-
+@RequestMapping("alunos")
+public class AlunoResource {
     @Autowired
-    private CursoRepository cursoRepository;
+    private AlunoRepository alunoRepository;
 
     // poderia ser "/*" igual ao banco de dados
     @GetMapping("/todos")
-    public List<Curso> listarTodosCursos() {
+    public List<Aluno> listarTodosAlunos() {
         // o método find all é o método que funciona como o select *
-        return cursoRepository.findAll();
+        return alunoRepository.findAll();
 
         //testar usando o chrome -> localhost:8080/cursos/todos
     }
