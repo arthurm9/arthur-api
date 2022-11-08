@@ -1,5 +1,7 @@
 package br.com.etec.arthur.arthurapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -10,6 +12,10 @@ public class Aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name="cursoid")
+    private Curso curso;
 
     @Override
     public boolean equals(Object o) {
@@ -45,8 +51,5 @@ public class Aluno {
         this.curso = curso;
     }
 
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name="curso")
-    private Curso curso;
+
 }
